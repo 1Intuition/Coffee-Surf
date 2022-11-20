@@ -9,9 +9,9 @@
 				<h6 class="font-weight-bold my-2">Rating: {{row["rating"]}}/100</h6>
 				<ul class="list-inline small">
 
-					<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+					<li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
 					{% for _ in range((row["rating"]-85)//3) %}
-					<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+					<li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
 					{% endfor %}
 				</ul>
 			</div>
