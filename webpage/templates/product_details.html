@@ -1,0 +1,79 @@
+<li class="list-group-item">
+    <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+        <div class="media-body order-2 order-lg-1">
+            <h4 class="mt-0 font-weight-bold mb-2">{{product_row["roaster"]}}</h4>
+            <h4 class="mt-0 font-weight-bold text-info mb-2">{{product_row["name"]}}</h4>
+
+            <div class="container row mt-3">
+                <div class="col-md-6">
+                    <div class="row mt-1"><b>Roaster Location:</b>&nbsp;{{product_row["location"]}}</div>
+                    <div class="row mt-1"><b>Coffee Origin:</b>&nbsp;{{product_row["origin"]}}</div>
+                    <div class="row mt-1"><b>Latitude:</b>&nbsp;{{product_row["latitude"]}}&deg;</div>
+                    <div class="row mt-1"><b>Roast Level:</b>&nbsp;{{product_row["roast"]}}</div>
+                    <div class="row mt-1"><b>Agtron:</b>&nbsp;{{product_row["agtron"]}}</div>
+                    <div class="row mt-1"><b>Est. Price:</b>&nbsp;{{product_row["est_price"]}}</div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row mt-1"><b>Review Date:</b>&nbsp;{{product_row["review_date"]}}</div>
+                    <div class="row mt-1"><b>Aroma:</b>&nbsp;{{product_row["aroma"]}}/10</div>
+                    <div class="row mt-1"><b>Acid:</b>&nbsp;{{product_row["acid"]}}/10</div>
+                    <div class="row mt-1"><b>Body:</b>&nbsp;{{product_row["body"]}}/10</div>
+                    <div class="row mt-1"><b>Flavor:</b>&nbsp;{{product_row["flavor"]}}/10</div>
+                    <div class="row mt-1"><b>Aftertaste:</b>&nbsp;{{product_row["aftertaste"]}}/10</div>
+                    <div class="row mt-1"><b>With Milk:</b>&nbsp;{{product_row["with_milk"]}}/10</div>
+
+                </div>
+            </div>
+            <div>
+                {% if "chocolat" in product_row["characteristics"] or "chocolati" in product_row["characteristics"] or "cocoa" in product_row["characteristics"]%}
+                <img src="/static/chocolate.png">
+                {% endif%}
+
+                {% if "acid" in product_row["characteristics"] or "crispli" in product_row["characteristics"]
+                or "zest" in product_row["characteristics"] or "tart" in product_row["characteristics"]%}
+                <img src="/static/citrus.png">
+                {% endif%}
+
+                {% if "apricot" in product_row["characteristics"]%}
+                <img src="/static/apricot.png">
+                {% endif%}
+
+                {% if "cherri" in product_row["characteristics"]%}
+                <img src="/static/cherry.png">
+                {% endif%}
+
+                {% if "almmond" in product_row["characteristics"] or "hazelnut" in product_row["characteristics"]%}
+                <img src="/static/nut.png">
+                {% endif%}
+
+                {% if "oak" in product_row["characteristics"] or "sandalwood" in product_row["characteristics"]
+                or "cedar" in product_row["characteristics"]%}
+                <img src="/static/wood.png">
+                {% endif%}
+
+                {% if "narcissus" in product_row["characteristics"] or "floral" in product_row["characteristics"]
+                or "magnolia" in product_row["characteristics"] or "flower" in product_row["characteristics"]%}
+                <img src="/static/flower.png">
+                {% endif%}
+
+            </div>
+            <p class="font-italic mt-3 mb-0"><b>Blind Assessment:</b> {{product_row["description"]}}</p>
+            <p class="font-italic mt-3 mb-0"><b>Notes:</b> {{product_row["desc_2"]}}</p>
+            <p class="font-italic mt-3 mb-0"><b>The Bottom Line:</b> {{product_row["desc_3"]}}</p>
+
+            <div class="d-flex align-items-center justify-content-end mt-1">
+                <ul class="list-inline small">
+                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                    {% for _ in range((product_row["rating"]-85)//3) %}
+					<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+					{% endfor %}
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+                <h6 class="font-weight-bold my-2 text-muted small">Reviews provided by <a href="https://www.coffeereview.com/">Coffee Review</a></h6>
+                <h6 class="font-weight-bold my-2">Rating: {{product_row["rating"]}}/100</h6>
+            </div>
+        </div>
+</li>

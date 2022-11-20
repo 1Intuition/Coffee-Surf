@@ -1,6 +1,6 @@
 body{
 	/*background: linear-gradient(to right, #c04848, #480048);*/
-	background-image: url("/static/original1.jpg");
+	background-image: url("original1.jpg");
 	background-size: cover;
 	min-height: 100vh;
 }
