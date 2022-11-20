@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container py-5">
+		<div class="row text-center text-white mb-5">
+			<div class="col-lg-7 mx-auto">
+				<h1 class="display-4">Brand name</h1>
+				<form class="navbar-form" role="search">
+					<div class="input-group add-on">
+						<input class="form-control" placeholder="Search" name="q" id="search-bar" type="text">
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 mx-auto">
+
+				<ul class="list-group shadow">
+
+
+					<li class="list-group-item">
+						<div class="media align-items-lg-center flex-column flex-lg-row p-3">
+							<div class="media-body order-2 order-lg-1">
+								<h4 class="mt-0 font-weight-bold mb-2">{{posts[0].brand}}</h4>
+								<h4 class="mt-0 font-weight-bold text-info mb-2">Sweety Espresso Blend</h4>
+
+								<div class="container row mt-3">
+									<div class="col-md-6">
+										<div class="row mt-1"><b>Roaster Location:</b>&nbsp;{{posts[0].roasted_location}}</div>
+										<div class="row mt-1"><b>Coffee Origin:</b>&nbsp;{{posts[0].coffee_origin}}</div>
+										<div class="row mt-1"><b>Latitude:</b>&nbsp;{{posts[0].}}</div>
+										<div class="row mt-1"><b>Roast Level:</b>&nbsp;Medium-Light</div>
+										<div class="row mt-1"><b>Agtron:</b>&nbsp;54/72</div>
+										<div class="row mt-1"><b>Est. Price:</b>&nbsp;NT $249/8 ounces</div>
+
+									</div>
+									<div class="col-md-6">
+										<div class="row mt-1"><b>Review Date:</b>&nbsp;November 2022</div>
+										<div class="row mt-1"><b>Aroma:</b>&nbsp;9/10</div>
+										<div class="row mt-1"><b>Body:</b>&nbsp;9/10</div>
+										<div class="row mt-1"><b>Flavor:</b>&nbsp;9/10</div>
+										<div class="row mt-1"><b>Aftertaste:</b>&nbsp;9/10</div>
+										<div class="row mt-1"><b>With Milk:</b>&nbsp;9/10</div>
+
+									</div>
+								</div>
+
+
+								<p class="font-italic mt-3 mb-0"><b>Blind Assessment:</b> A radiant espresso blend that shines equally in the straight shot and in milk, alive with notes of rich dark chocolate and black cherry. | Guji Zone, Oromia Region, south-central Ethiopia</p>
+								<p class="font-italic mt-3 mb-0"><b>Blind Assessment:</b> A radiant espresso blend that shines equally in the straight shot and in milk, alive with notes of rich dark chocolate and black cherry. | Guji Zone, Oromia Region, south-central Ethiopia</p>
+								<p class="font-italic mt-3 mb-0"><b>Blind Assessment:</b> A radiant espresso blend that shines equally in the straight shot and in milk, alive with notes of rich dark chocolate and black cherry. | Guji Zone, Oromia Region, south-central Ethiopia</p>
+								<!-- <div class="d-flex align-items-center justify-content-between mt-1">
+									<h6 class="font-weight-bold my-2"></h6>
+									<ul class="list-inline small">
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+									</ul>
+								</div>
+								<div class="d-flex align-items-center justify-content-between mt-1">
+									<h6 class="font-weight-bold my-2"></h6>
+									<h6 class="font-weight-bold my-2">Rating: 94/100</h6>
+								</div> -->
+
+
+
+								<div class="d-flex align-items-center justify-content-end mt-1">
+									<ul class="list-inline small">
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+									</ul>
+								</div>
+								<div class="d-flex align-items-center justify-content-between">
+									<h6 class="font-weight-bold my-2 text-muted small">Reviews provided by <a href="https://www.coffeereview.com/">Coffee Review</a></h6>
+									<h6 class="font-weight-bold my-2">Rating: 94/100</h6>
+								</div>
+
+							<!-- </div><img src="https://i.imgur.com/KFojDGa.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2"> -->
+						</div>
+					</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<li class="list-group-item">
+						<div class="media align-items-lg-center flex-column flex-lg-row p-3">
+							<div class="media-body order-2 order-lg-1">
+								<p class="font-italic text-info mb-0 small">Recommended for you</p>
+								<h5 class="mt-0 font-weight-bold mb-2"><a href="google.com">“Sweety” Espresso Blend &ndash; A.R.C.</a></h5>
+								<p class="font-italic text-muted mb-0 small">A radiant espresso blend that shines equally in the straight shot and in milk, alive with notes of rich dark chocolate and black cherry. | Guji Zone, Oromia Region, south-central Ethiopia</p>
+								<div class="d-flex align-items-center justify-content-between mt-1">
+									<h6 class="font-weight-bold my-2">Rosted: Medium-Light</h6>
+									<h6 class="font-weight-bold my-2">Rating: 94/100</h6>
+									<ul class="list-inline small">
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+									</ul>
+								</div>
+							<!-- </div><img src="https://i.imgur.com/KFojDGa.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2"> -->
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="media align-items-lg-center flex-column flex-lg-row p-3">
+							<div class="media-body order-2 order-lg-1">
+								<p class="font-italic text-info mb-0 small">Recommended for you</p>
+								<h5 class="mt-0 font-weight-bold mb-2"><a href="google.com">“Sweety” Espresso Blend &ndash; A.R.C.</a></h5>
+								<p class="font-italic text-muted mb-0 small">A radiant espresso blend that shines equally in the straight shot and in milk, alive with notes of rich dark chocolate and black cherry. | Guji Zone, Oromia Region, south-central Ethiopia</p>
+								<div class="d-flex align-items-center justify-content-between mt-1">
+									<h6 class="font-weight-bold my-2">Rosted: Medium-Light</h6>
+									<h6 class="font-weight-bold my-2">Rating: 94/100</h6>
+									<ul class="list-inline small">
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+									</ul>
+								</div>
+							<!-- </div><img src="https://i.imgur.com/KFojDGa.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2"> -->
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="media align-items-lg-center flex-column flex-lg-row p-3">
+							<div class="media-body order-2 order-lg-1">
+								<p class="font-italic text-info mb-0 small">Recommended for you</p>
+								<h5 class="mt-0 font-weight-bold mb-2"><a href="google.com">“Sweety” Espresso Blend &ndash; A.R.C.</a></h5>
+								<p class="font-italic text-muted mb-0 small">A radiant espresso blend that shines equally in the straight shot and in milk, alive with notes of rich dark chocolate and black cherry. | Guji Zone, Oromia Region, south-central Ethiopia</p>
+								<div class="d-flex align-items-center justify-content-between mt-1">
+									<h6 class="font-weight-bold my-2">Rosted: Medium-Light</h6>
+									<h6 class="font-weight-bold my-2">Rating: 94/100</h6>
+									<ul class="list-inline small">
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+									</ul>
+								</div>
+							<!-- </div><img src="https://i.imgur.com/KFojDGa.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2"> -->
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="media align-items-lg-center flex-column flex-lg-row p-3">
+							<div class="media-body order-2 order-lg-1">
+								<p class="font-italic text-info mb-0 small">Recommended for you</p>
+								<h5 class="mt-0 font-weight-bold mb-2"><a href="google.com">“Sweety” Espresso Blend &ndash; A.R.C.</a></h5>
+								<p class="font-italic text-muted mb-0 small">A radiant espresso blend that shines equally in the straight shot and in milk, alive with notes of rich dark chocolate and black cherry. | Guji Zone, Oromia Region, south-central Ethiopia</p>
+								<div class="d-flex align-items-center justify-content-between mt-1">
+									<h6 class="font-weight-bold my-2">Rosted: Medium-Light</h6>
+									<h6 class="font-weight-bold my-2">Rating: 94/100</h6>
+									<ul class="list-inline small">
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+									</ul>
+								</div>
+							<!-- </div><img src="https://i.imgur.com/KFojDGa.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2"> -->
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="media align-items-lg-center flex-column flex-lg-row p-3">
+							<div class="media-body order-2 order-lg-1">
+								<p class="font-italic text-info mb-0 small">Recommended for you</p>
+								<h5 class="mt-0 font-weight-bold mb-2"><a href="google.com">“Sweety” Espresso Blend &ndash; A.R.C.</a></h5>
+								<p class="font-italic text-muted mb-0 small">A radiant espresso blend that shines equally in the straight shot and in milk, alive with notes of rich dark chocolate and black cherry. | Guji Zone, Oromia Region, south-central Ethiopia</p>
+								<div class="d-flex align-items-center justify-content-between mt-1">
+									<h6 class="font-weight-bold my-2">Rosted: Medium-Light</h6>
+									<h6 class="font-weight-bold my-2">Rating: 94/100</h6>
+									<ul class="list-inline small">
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+										<li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+									</ul>
+								</div>
+							<!-- </div><img src="https://i.imgur.com/KFojDGa.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2"> -->
+						</div>
+					</li>
+
+
+					
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

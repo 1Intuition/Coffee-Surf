@@ -1,0 +1,15 @@
+body{
+	/*background: linear-gradient(to right, #c04848, #480048);*/
+	background-image: url("/static/original1.jpg");
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.text-gray{
+	color: #aaa;
+}
+
+img {
+	height: 170px;
+	width: 140px;
+}
