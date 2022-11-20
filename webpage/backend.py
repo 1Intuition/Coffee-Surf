@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import pickle
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates", static_folder="static")
 
 data =  pickle.load(open("data.p", 'rb'))
 keys = pickle.load(open("keys.p", 'rb'))
