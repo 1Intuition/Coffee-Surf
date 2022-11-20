@@ -2,17 +2,17 @@
 	<div class="media align-items-lg-center flex-column flex-lg-row p-3">
 		<div class="media-body order-2 order-lg-1">
 			{% if is_product_page %}<p class="font-italic text-info mb-0 small">Recommended for you</p>{% endif %}
-			<h5 class="mt-0 font-weight-bold mb-2"><a href="{{PRODUCT_LINK}}">{{i}} &ndash; {{COFFEE_BRAND}}</a></h5>
-			<p class="font-italic text-muted mb-0 small">{{SMALL_DESCRIPTION}} | {{COFFEE_ORIGIN}}</p>
+			<h5 class="mt-0 font-weight-bold mb-2"><a href="/product?id={{index}}">{{row["roaster"]}} &ndash; {{row["name"]}}</a></h5>
+			<p class="font-italic text-muted mb-0 small">{{row["description"]}} | {{row["origin"]}}</p>
 			<div class="d-flex align-items-center justify-content-between mt-1">
-				<h6 class="font-weight-bold my-2">Roasted: {{ROASTED_LEVEL}}</h6>
-				<h6 class="font-weight-bold my-2">Rating: {{COFFEE_RATING}}/100</h6>
+				<h6 class="font-weight-bold my-2">Roasted: {{row["roast"]}}</h6>
+				<h6 class="font-weight-bold my-2">Rating: {{row["rating"]}}/100</h6>
 				<ul class="list-inline small">
+
 					<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+					{% for _ in range((row["rating"]-85)//3) %}
 					<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-					<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-					<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-					<li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+					{% endfor %}
 				</ul>
 			</div>
 		</div>

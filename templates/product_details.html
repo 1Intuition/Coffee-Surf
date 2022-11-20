@@ -1,47 +1,47 @@
 <li class="list-group-item">
     <div class="media align-items-lg-center flex-column flex-lg-row p-3">
         <div class="media-body order-2 order-lg-1">
-            <h4 class="mt-0 font-weight-bold mb-2">{{COFFEE_BRAND}}</h4>
-            <h4 class="mt-0 font-weight-bold text-info mb-2">{{COFFEE_NAME}}</h4>
+            <h4 class="mt-0 font-weight-bold mb-2">{{product_row["roaster"]}}</h4>
+            <h4 class="mt-0 font-weight-bold text-info mb-2">{{product_row["name"]}}</h4>
 
             <div class="container row mt-3">
                 <div class="col-md-6">
-                    <div class="row mt-1"><b>Roaster Location:</b>&nbsp;{{COFFEE_LOCATION}}</div>
-                    <div class="row mt-1"><b>Coffee Origin:</b>&nbsp;{{COFFEE_ORIGIN}}</div>
-                    <div class="row mt-1"><b>Latitude:</b>&nbsp;{{LATITUDE}}</div>
-                    <div class="row mt-1"><b>Roast Level:</b>&nbsp;{{ROASTED_LEVEL}}</div>
-                    <div class="row mt-1"><b>Agtron:</b>&nbsp;{{AGTRON}}</div>
-                    <div class="row mt-1"><b>Est. Price:</b>&nbsp;{{PRICE}}</div>
+                    <div class="row mt-1"><b>Roaster Location:</b>&nbsp;{{product_row["location"]}}</div>
+                    <div class="row mt-1"><b>Coffee Origin:</b>&nbsp;{{product_row["origin"]}}</div>
+                    <div class="row mt-1"><b>Latitude:</b>&nbsp;{{product_row["latitude"]}}&deg;</div>
+                    <div class="row mt-1"><b>Roast Level:</b>&nbsp;{{product_row["roast"]}}</div>
+                    <div class="row mt-1"><b>Agtron:</b>&nbsp;{{product_row["agtron"]}}</div>
+                    <div class="row mt-1"><b>Est. Price:</b>&nbsp;{{product_row["est_price"]}}</div>
 
                 </div>
                 <div class="col-md-6">
-                    <div class="row mt-1"><b>Review Date:</b>&nbsp;{{REVIEW_DATE}}</div>
-                    <div class="row mt-1"><b>Aroma:</b>&nbsp;{{AROMA}}/10</div>
-                    <div class="row mt-1"><b>Body:</b>&nbsp;{{BODY}}/10</div>
-                    <div class="row mt-1"><b>Flavor:</b>&nbsp;{{FLAVOR}}/10</div>
-                    <div class="row mt-1"><b>Aftertaste:</b>&nbsp;{{AFTERTASTE}}/10</div>
-                    <div class="row mt-1"><b>With Milk:</b>&nbsp;{{WITH_MILK}}/10</div>
+                    <div class="row mt-1"><b>Review Date:</b>&nbsp;{{product_row["review_date"]}}</div>
+                    <div class="row mt-1"><b>Aroma:</b>&nbsp;{{product_row["aroma"]}}/10</div>
+                    <div class="row mt-1"><b>Acid:</b>&nbsp;{{product_row["acid"]}}/10</div>
+                    <div class="row mt-1"><b>Body:</b>&nbsp;{{product_row["body"]}}/10</div>
+                    <div class="row mt-1"><b>Flavor:</b>&nbsp;{{product_row["flavor"]}}/10</div>
+                    <div class="row mt-1"><b>Aftertaste:</b>&nbsp;{{product_row["aftertaste"]}}/10</div>
+                    <div class="row mt-1"><b>With Milk:</b>&nbsp;{{product_row["with_milk"]}}/10</div>
 
                 </div>
             </div>
 
-            <p class="font-italic mt-3 mb-0"><b>Blind Assessment:</b> {{DESC_1}}</p>
-            <p class="font-italic mt-3 mb-0"><b>Notes:</b> {{DESC_2}}</p>
-            <p class="font-italic mt-3 mb-0"><b>The Bottom Line:</b> {{DESC_3}}</p>
+            <p class="font-italic mt-3 mb-0"><b>Blind Assessment:</b> {{product_row["description"]}}</p>
+            <p class="font-italic mt-3 mb-0"><b>Notes:</b> {{product_row["desc_2"]}}</p>
+            <p class="font-italic mt-3 mb-0"><b>The Bottom Line:</b> {{product_row["desc_3"]}}</p>
 
             <div class="d-flex align-items-center justify-content-end mt-1">
                 <ul class="list-inline small">
                     <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                    <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                    {% for _ in range((product_row["rating"]-85)//3) %}
+					<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+					{% endfor %}
                 </ul>
             </div>
 
             <div class="d-flex align-items-center justify-content-between">
                 <h6 class="font-weight-bold my-2 text-muted small">Reviews provided by <a href="https://www.coffeereview.com/">Coffee Review</a></h6>
-                <h6 class="font-weight-bold my-2">Rating: {{COFFEE_RATING}}/100</h6>
+                <h6 class="font-weight-bold my-2">Rating: {{product_row["rating"]}}/100</h6>
             </div>
         </div>
 </li>

@@ -1,13 +1,15 @@
 from flask import Flask, request, redirect, render_template
 import pickle
 import pandas as pd
+import numpy as np
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
 
 DISPLAY_MAX_RESULTS = 50
 
 
-data = pickle.load(open("data.p", "rb"))
+data = pickle.load(open("df.p", "rb"))
+# data = pd.read_csv("df2.csv")
 
 @app.route("/")
 def route_search():
@@ -18,45 +20,29 @@ def route_search():
     result_data = data
 
     num_pages = ((len(result_data) - 1) // DISPLAY_MAX_RESULTS) + 1  # 0 if 0 data else 1, 2, etc
-    if query_page <= 0 or query_page > num_pages:  # invalid page arg set to None
+    if query_page is not None and (query_page <= 0 or query_page > num_pages):  # invalid page arg set to None
         query_page = None
 
-    if query_page is None:
-        result_data[0:DISPLAY_MAX_RESULTS]
+    this_page = 1 if query_page is None else query_page
+
+    cropped_result_data = result_data[DISPLAY_MAX_RESULTS*(this_page-1):DISPLAY_MAX_RESULTS*this_page]
+
+    # print(cropped_result_data["roaster"][])
+
+    if this_page == num_pages:
+        next_page_link = None
     else:
-        result_data[DISPLAY_MAX_RESULTS*(query_page-1):DISPLAY_MAX_RESULTS*query_page]
+        next_page_link = "/?" + (f"q={search_query}&" if search_query else "") + f"page={this_page+1}"
 
-    if search_query is None:
-        return render_template("index.html",
-                               is_product_page=False,
-                               search_results=len(cropped_result_data),
-                               data=cropped_result_data,
-                               this_page=3,  # integer denoting the page number, starting at 1!!!
-                               num_pages=6,  # integer denoting the number of total pages
-                               next_page_link=None   # None if there are no more pages, string of next page otherwise
-                               )
-
-    return render_template("index.html", is_product_page=False, search_results=8, data=data,
-                           PRODUCT_LINK="google.ro",
-                           COFFEE_BRAND=search_query,
-                           COFFEE_NAME=search_query,
-                           COFFEE_LOCATION="asdfsd",
-                           COFFEE_ORIGIN="asdfsd",
-                           LATITUDE="asdfsd",
-                           ROASTED_LEVEL="asdfsd",
-                           AGTRON="asdfsd",
-                           PRICE="asdfsd",
-                           REVIEW_DATE="asdfsd",
-                           AROMA="asdfsd",
-                           BODY="asdfsd",
-                           FLAVOR="asdfsd",
-                           AFTERTASTE="asdfsd",
-                           WITH_MILK="asdfsd",
-                           DESC_1="asdfsd",
-                           DESC_2="asdfsd",
-                           DESC_3="asdfsd",
-                           COFFEE_RATING="asdfsd"
+    return render_template("index.html",
+                           is_product_page=False,
+                           num_results=len(cropped_result_data),
+                           data=cropped_result_data,
+                           this_page=this_page,  # integer denoting the page number, starting at 1!!!
+                           num_pages=num_pages,  # integer denoting the number of total pages
+                           next_page_link=next_page_link   # None if there are no more pages, string of next page otherwise
                            )
+
 
 @app.route("/product")
 def route_product():
@@ -65,26 +51,13 @@ def route_product():
         return redirect("/")
     print(product_id)
     # get product info info the template variables
-    return render_template("index.html", is_product_page=True,
-                           PRODUCT_LINK="google.ro",
-                           COFFEE_BRAND=product_id,
-                           COFFEE_NAME=product_id,
-                           COFFEE_LOCATION="asdfsd",
-                           COFFEE_ORIGIN="asdfsd",
-                           LATITUDE="asdfsd",
-                           ROASTED_LEVEL="asdfsd",
-                           AGTRON="asdfsd",
-                           PRICE="asdfsd",
-                           REVIEW_DATE="asdfsd",
-                           AROMA="asdfsd",
-                           BODY="asdfsd",
-                           FLAVOR="asdfsd",
-                           AFTERTASTE="asdfsd",
-                           WITH_MILK="asdfsd",
-                           DESC_1="asdfsd",
-                           DESC_2="asdfsd",
-                           DESC_3="asdfsd",
-                           COFFEE_RATING="asdfsd"
+
+    rec_ids = data["recommendations"][product_id]
+
+    return render_template("index.html",
+                           is_product_page=True,
+                           product_row=data.iloc[product_id],
+                           recommendations=data.iloc[rec_ids]
                            )
 
 

@@ -38,13 +38,21 @@
 
 					<li class="list-group-item">
 						<div class="media align-items-lg-center flex-column flex-lg-row p-0">
-							<h5 class="mt-0 mb-0 small">Displaying 1252 matching products...</h5>
+							<h5 class="mt-0 mb-0 small">Displaying {{num_results}} matching products. Page {{this_page}} of {{num_pages}} pages...</h5>
 						</div>
 					</li>
 
-					{% for i in range(search_results) %}
+					{% for index, row in data.iterrows() %}
 					{% include 'product_small.html' %}
 					{% endfor %}
+
+					{% if next_page_link %}
+					<li class="list-group-item">
+						<div class="media align-items-lg-center flex-column flex-lg-row p-0">
+							<h5 class="mt-0 mb-0"><a href="{{next_page_link}}">Page {{this_page+1}}</a></h5>
+						</div>
+					</li>
+					{% endif %}
 
 					{% endif %}
 
@@ -59,7 +67,7 @@
 			<div class="col-lg-8 mx-auto">
 				<ul class="list-group shadow">
 					<!-- OUTPUT THE 5 RECOMMENDATIONS -->
-					{% for i in range(5) %}
+					{% for index, row in recommendations.iterrows() %}
 					{% include 'product_small.html' %}
 					{% endfor %}
 
