@@ -16,7 +16,8 @@ def route_search():
     search_query = request.args.get("q", type=str)
     query_page = request.args.get("page", type=int)  # starts from 1
 
-    # get result data with function:...
+    # get result data with search function:...
+    # ex:   result_data: Dataframe = SEARCH_QUERY(data: DataFrame, search_query: str | None)
     result_data = data
 
     num_pages = ((len(result_data) - 1) // DISPLAY_MAX_RESULTS) + 1  # 0 if 0 data else 1, 2, etc
@@ -63,4 +64,5 @@ def route_product():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True)  # Http with debug
+    # app.run(ssl_context=('CERTS_intuition.ddns.net/intuition_ddns_net.pem', 'CERTS_intuition.ddns.net/apiserv.key'))  # HTTPS

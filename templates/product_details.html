@@ -2,7 +2,7 @@
     <div class="media align-items-lg-center flex-column flex-lg-row p-3">
         <div class="media-body order-2 order-lg-1">
             <h4 class="mt-0 font-weight-bold mb-2">{{product_row["roaster"]}}</h4>
-            <h4 class="mt-0 font-weight-bold text-info mb-2">{{product_row["name"]}}</h4>
+            <h4 style="color: #754736;" class="mt-0 font-weight-bold mb-2" >{{product_row["name"]}}</h4>
 
             <div class="container row mt-3">
                 <div class="col-md-6">
@@ -32,9 +32,9 @@
 
             <div class="d-flex align-items-center justify-content-end mt-1">
                 <ul class="list-inline small">
-                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                    <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
                     {% for _ in range((product_row["rating"]-85)//3) %}
-					<li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+					<li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
 					{% endfor %}
                 </ul>
             </div>

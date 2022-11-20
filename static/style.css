@@ -4,6 +4,12 @@ body{
 	background-size: cover;
 	background-attachment: fixed;
 	min-height: 100vh;
+
+
+}
+
+* {
+font-family: "Ubuntu", sans-serif;
 }
 
 .text-gray{
